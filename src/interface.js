@@ -11,10 +11,11 @@ function showAllArticles(){
         var string = notebook[i].content
         var url = notebook[i].content
         if(string.length > 20) {
-          string = string.substring(0,20) + '...' + '<br>' ;
+          string = string.substring(0,20) + '...' ;
         }
         oneNote.setAttribute("href",'#' + `${url}`)
-        oneNote.innerHTML = string
+        oneNote.setAttribute("class", "note")
+        oneNote.innerHTML = string + '<br>'
         document.getElementById("box").appendChild(oneNote)
       }
 
@@ -66,6 +67,7 @@ function showAllArticles(){
     }
 
     oneNote.setAttribute("href",'#' + `${url}`)
+    oneNote.setAttribute("class", "note")
     oneNote.innerHTML = string
     document.getElementById("box").appendChild(oneNote)
   })
