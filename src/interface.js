@@ -1,7 +1,7 @@
 
 var createButton = document.getElementById('createButton')
 var textField = document.getElementById('textField')
-var noteIndex = 1;  // start at 1 because the pre-set note has id 0
+// var noteIndex = 1;  // start at 1 because the pre-set note has id 0
 
 window.onload = showAllArticles();
 
@@ -62,8 +62,8 @@ function showAllArticles(){
     e.preventDefault()
     console.log('something')
     let text = textField.value;
-    let newNote = new Note(noteIndex, `${text}`)
-    noteIndex ++;
+    let newNote = new Note(notebook.length, `${text}`)
+    // noteIndex ++;
     console.log(newNote.content)
     notebook.push(newNote)
     console.log(notebook)
