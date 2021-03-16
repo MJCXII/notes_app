@@ -1,6 +1,7 @@
 
 var createButton = document.getElementById('createButton')
 var textField = document.getElementById('textField')
+var noteIndex = 1;  // start at 1 because the pre-set note has id 0
 
 window.onload = showAllArticles();
 
@@ -9,7 +10,7 @@ function showAllArticles(){
       for(let i = 0; i < notebook.length ; i++){
         var oneNote = document.createElement("a")
         var string = notebook[i].content
-        var url = notebook[i].content
+        var url = notebook[i].id
         if(string.length > 20) {
           string = string.substring(0,20) + '...' ;
         }
@@ -42,7 +43,14 @@ function showAllArticles(){
       };
 
       function getArticleFromUrl(location) {
-        return location.hash.split("#")[1];
+        var id = location.hash.split("#")[1];
+        if (id === undefined){
+          showAllArticles();
+        }
+        else{
+          var content = notebook[id].content
+          return content
+        }
       };
 
       function showArticle(article) {
@@ -54,13 +62,14 @@ function showAllArticles(){
     e.preventDefault()
     console.log('something')
     let text = textField.value;
-    let newNote = new Note(`${text}`)
+    let newNote = new Note(noteIndex, `${text}`)
+    noteIndex ++;
     console.log(newNote.content)
     notebook.push(newNote)
     console.log(notebook)
     var oneNote = document.createElement("a")
     var string = newNote.content
-    var url = newNote.content
+    var url = newNote.id
 
     if(string.length > 20) {
       string = string.substring(0,20) + '...' + '<br>' ;
