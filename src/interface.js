@@ -81,17 +81,17 @@ function showAllArticles(){
     document.getElementById("box").appendChild(oneNote)
   })
 
-function getEmoji(todoText) {
+function getEmoji(id) {
+  todoText = notebook[id].content
   var data = {"text": todoText};
-  var out;
-  fetch("https://makers-emojify.herokuapp.com",
+  const request = async () => {
+  const response = await fetch("https://makers-emojify.herokuapp.com",
   {method: 'POST',
-   headers: {'Content-Type': 'application/json'},
-   body: JSON.stringify(data)})
-    .then((response) => response.json())
-    .then((text) => {
-      out = text.emojified_text;
-      console.log(text.emojified_text);
-    });
-  return out;
+  headers: {'Content-Type': 'application/json'},
+  body: JSON.stringify(data)});
+  const json = await response.json();
+  notebook[id].content = json.emojified_text;
+  console.log(json);
+   }
+   request();
 }
