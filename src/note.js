@@ -1,11 +1,6 @@
 class Note {
-  constructor(title, content) {
-    this.title = title;
+  constructor(content) {
     this.content = content;
-  }
-
-  title() {
-    return this.title;
   }
 
   content() {
