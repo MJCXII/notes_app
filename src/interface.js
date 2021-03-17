@@ -22,7 +22,24 @@ function showAllArticles(){
 
    }
 
+   function hideNoteCreation(){
+       if (window.location.href.includes("#") > -1) {
+         var x = document.getElementById("notecreate");
+         x.style.display = "none";
+     };
+   }
 
+   function showNoteCreation(){
+       if (window.location.href.includes("#") > -1) {
+         var x = document.getElementById("notecreate");
+         x.style.display = "block";
+     };
+   }
+
+   window.onpopstate=function()
+   {
+     showNoteCreation();
+   }
 
   makeUrlChangeShowArticleForCurrentPage();
 
@@ -55,6 +72,7 @@ function showAllArticles(){
 
       function showArticle(article) {
             document.getElementById('box').innerHTML = article
+            hideNoteCreation();
           };
 
 
@@ -75,12 +93,12 @@ function showAllArticles(){
     var url = newNote.id
 
     if(string.length > 20) {
-      string = string.substring(0,20) + '...' + '<br>' ;
+      string = string.substring(0,20) + '...';
     }
 
     oneNote.setAttribute("href",'#' + `${url}`)
     oneNote.setAttribute("class", "note")
-    oneNote.innerHTML = string
+    oneNote.innerHTML = string + '<br>'
 
     document.getElementById("box").appendChild(oneNote)
 
