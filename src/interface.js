@@ -58,14 +58,17 @@ function showAllArticles(){
           };
 
 
-  createButton.addEventListener('click', function(e) {
+  createButton.addEventListener('click', async function(e) {
     e.preventDefault()
-    console.log('something')
-    let text = textField.value;
-    let newNote = new Note(notebook.length, `${text}`)
+    console.log(textField.value)
+    let emojiText = await getEmoji(textField.value)
+    let newNote = new Note(notebook.length, `${emojiText}`)
     // noteIndex ++;
+
+
     console.log(newNote.content)
     notebook.push(newNote)
+
     console.log(notebook)
     var oneNote = document.createElement("a")
     var string = newNote.content
@@ -78,20 +81,24 @@ function showAllArticles(){
     oneNote.setAttribute("href",'#' + `${url}`)
     oneNote.setAttribute("class", "note")
     oneNote.innerHTML = string
+
     document.getElementById("box").appendChild(oneNote)
+
+
   })
 
-function getEmoji(id) {
-  todoText = notebook[id].content
-  var data = {"text": todoText};
+async function getEmoji(text) {
+
+  var data = {"text": text};
   const request = async () => {
   const response = await fetch("https://makers-emojify.herokuapp.com",
   {method: 'POST',
   headers: {'Content-Type': 'application/json'},
   body: JSON.stringify(data)});
   const json = await response.json();
-  notebook[id].content = json.emojified_text;
+
   console.log(json);
+  return json.emojified_text;
    }
-   request();
+   return await request();
 }
