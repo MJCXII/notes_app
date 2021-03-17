@@ -1,6 +1,8 @@
 
 var createButton = document.getElementById('createButton')
 var textField = document.getElementById('textField')
+var notes = document.getElementsByClassName('note')
+var mode = 'day';
 // var noteIndex = 1;  // start at 1 because the pre-set note has id 0
 
 window.onload = showAllArticles();
@@ -84,6 +86,8 @@ function showAllArticles(){
 
     document.getElementById("box").appendChild(oneNote)
 
+    checkMode()
+
 
   })
 
@@ -101,4 +105,61 @@ async function getEmoji(text) {
   return json.emojified_text;
    }
    return await request();
+}
+
+// day/night mode switch
+
+var modeSwitch = document.getElementById('checkbox');
+var houseImage = document.getElementById('houseImage');
+var body = document.body
+
+
+
+modeSwitch.addEventListener('click', function() {
+
+
+  if (mode === "day") {
+    mode = 'night'
+    houseImage.src = './images/nightHouse.png'
+    console.log(notes)
+    colorChangeToNight(notes)
+    body.style.color = "#FFFCF6"
+    body.style.backgroundColor = "#595252"
+    console.log(houseImage.src)
+
+  }
+  else if(mode === "night") {
+    mode = 'day'
+    houseImage.src = './images/dayHouse.png'
+    colorChangeToDay(notes)
+    body.style.backgroundColor = "white"
+    body.style.color = "#41403E"
+    console.log(houseImage.src)
+
+
+  };
+
+})
+
+function colorChangeToNight(notes){
+  for(let i = 0; i < notes.length ; i++) {
+    notes[i].style.color = "white"
+  }
+
+}
+
+function colorChangeToDay(notes){
+  for(let i = 0; i < notes.length ; i++) {
+    notes[i].style.color = "black";
+ }
+}
+
+
+function checkMode() {
+  if(mode == 'day') {
+  colorChangeToDay(notes)
+  }
+  else if(mode == 'night'){
+  colorChangeToNight(notes)
+  }
 }
