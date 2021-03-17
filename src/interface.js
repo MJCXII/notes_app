@@ -62,6 +62,8 @@ function showAllArticles(){
 
   createButton.addEventListener('click', async function(e) {
     e.preventDefault()
+    let soundBite = document.getElementById("savedSound")
+    soundBite.play()
     console.log(textField.value)
     let emojiText = await getEmoji(textField.value)
     let newNote = new Note(notebook.length, `${emojiText}`)
