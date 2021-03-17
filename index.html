@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 
-    <link rel="stylesheet" href="css/note.css" />
+    <link rel="stylesheet" href="styles/note.css" />
   </head>
   <body>
 
+    <div class="pageContainer">
+      <div class="notesContainer">
+        <h1>Notes!</h1>
+        <textarea id='textField'></textarea> <br>
+        <input type="submit" value="Create" id="createButton" />
+      </div>
 
-    <h1>Notes!</h1>
-    <input type="text" id='textField'/> <br>
-    <input type="submit" value="Create" id="createButton" />
+      <div id="box"> </div>
 
-    <div id="box"> </div>
-
-    <script charset="utf-8" src="src/note.js"></script>
-    <script charset="utf-8" src="src/notebook.js"></script>
-    <script charset="utf-8" src="src/interface.js"></script>
-    <script src="spec/interfaceSpec.js"></script>
+      <script charset="utf-8" src="src/note.js"></script>
+      <script charset="utf-8" src="src/notebook.js"></script>
+      <script charset="utf-8" src="src/interface.js"></script>
+      <script src="spec/interfaceSpec.js"></script>
+    </div>
   </body>
 </html>
