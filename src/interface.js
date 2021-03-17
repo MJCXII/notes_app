@@ -54,7 +54,7 @@ function showAllArticles(){
       };
 
       function showArticle(article) {
-            document.getElementById('box').innerHTML = article
+            document.getElementById('box').innerHTML = "<span class='article'>" + article + "</span>"
           };
 
 
