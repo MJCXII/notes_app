@@ -5,6 +5,7 @@ var notes = document.getElementsByClassName('note')
 var mode = 'day';
 // var noteIndex = 1;  // start at 1 because the pre-set note has id 0
 
+window.onload = setNotebook();
 window.onload = showAllArticles();
 
 function showAllArticles(){
@@ -90,6 +91,7 @@ function showAllArticles(){
 
     console.log(newNote.content)
     notebook.push(newNote)
+    saveNotebook();
 
     console.log(notebook)
     var oneNote = document.createElement("a")
@@ -181,5 +183,16 @@ function checkMode() {
   }
   else if(mode == 'night'){
   colorChangeToNight(notes)
+  }
+}
+
+function saveNotebook(){
+  localStorage.setItem("notebook", JSON.stringify(notebook));
+}
+
+function setNotebook(){
+  storedNotebook = localStorage.getItem("notebook");
+  if (storedNotebook !== null){
+    notebook = JSON.parse(storedNotebook);
   }
 }

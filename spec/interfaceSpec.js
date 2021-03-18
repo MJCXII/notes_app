@@ -1,5 +1,6 @@
 
 function createNoteSpec (noteText = "what a day to create a note", output = null) {
+  localStorage.clear();
   console.log('running test createNote');
   var noteInput = document.getElementById("textField");
   var noteButton = document.getElementById("createButton");
