@@ -1,5 +1,5 @@
 
-function createNoteSpec (noteText = "what a day to create a note") {
+function createNoteSpec (noteText = "what a day to create a note", output = null) {
   console.log('running test createNote');
   var noteInput = document.getElementById("textField");
   var noteButton = document.getElementById("createButton");
@@ -10,11 +10,14 @@ function createNoteSpec (noteText = "what a day to create a note") {
   console.log(shortNote);
   var notes = document.getElementsByClassName('note');
   
+  if (output === null){
+    output = shortNote;
+  }
   function checkNotesThisIsAPrivateFunctionYouGuys() {
-    console.log("short note: " + shortNote);
+    console.log("short note: " + output);
     for ( note of notes ){
       console.log("note text: " + note.text);
-      if (note.text.includes(shortNote)){
+      if (note.text.includes(output)){
         console.log("test passed: createNote " + noteText);
         return 1;
       }
@@ -26,4 +29,5 @@ function createNoteSpec (noteText = "what a day to create a note") {
 };
 
 createNoteSpec();
+createNoteSpec("the rains down in :earth_africa:", "the rains down in 🌍");
 // setTimeout(createNoteSpec(), 1000)
