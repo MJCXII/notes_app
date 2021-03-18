@@ -5,12 +5,25 @@ var notes = document.getElementsByClassName('note')
 var mode = 'day';
 // var noteIndex = 1;  // start at 1 because the pre-set note has id 0
 
-window.onload = setNotebook();
-window.onload = showAllArticles();
+// window.onload = setNotebook();
+window.onload = showPage();
+
+function showPage(){
+  console.log(window.location.href);
+  if (window.location.href.includes("#")) {
+    console.log('in article');
+    showArticleForCurrentPage();
+  }
+  else{
+    console.log('in root');
+    showAllArticles();
+    showNoteCreation();
+  };
+}
 
 function showAllArticles(){
 
-      for(let i = 0; i < notebook.length ; i++){
+    for(let i = 0; i < notebook.length ; i++){
         var oneNote = document.createElement("a")
         var string = notebook[i].content
         var url = notebook[i].id
@@ -21,23 +34,23 @@ function showAllArticles(){
         oneNote.setAttribute("class", "note")
         oneNote.innerHTML = string + '<br>'
         document.getElementById("box").appendChild(oneNote)
-      }
+    }
 
-   }
+}
 
-   function hideNoteCreation(){
-       if (window.location.href.includes("#") > -1) {
-         var x = document.getElementById("notecreate");
-         x.style.display = "none";
-     };
-   }
+function hideNoteCreation(){
+    if (window.location.href.includes("#") > -1) {
+      var x = document.getElementById("notecreate");
+      x.style.display = "none";
+  };
+}
 
-   function showNoteCreation(){
-       if (window.location.href.includes("#") > -1) {
-         var x = document.getElementById("notecreate");
-         x.style.display = "block";
-     };
-   }
+function showNoteCreation(){
+    if (window.location.href.includes("#") > -1) {
+      var x = document.getElementById("notecreate");
+      x.style.display = "block";
+  };
+}
 
    window.onpopstate=function()
    {
@@ -191,6 +204,9 @@ function saveNotebook(){
 }
 
 function setNotebook(){
+  // if (createNoteSpec === null){
+  //   return "test mode activated"
+  // }
   storedNotebook = localStorage.getItem("notebook");
   if (storedNotebook !== null){
     notebook = JSON.parse(storedNotebook);
