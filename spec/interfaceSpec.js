@@ -1,5 +1,5 @@
 
-function createNote (noteText = "what a day to create a note") {
+function createNoteSpec (noteText = "what a day to create a note") {
   console.log('running test createNote');
   var noteInput = document.getElementById("textField");
   var noteButton = document.getElementById("createButton");
@@ -10,7 +10,7 @@ function createNote (noteText = "what a day to create a note") {
   console.log(shortNote);
   var notes = document.getElementsByClassName('note');
   
-  function checkNotes() {
+  function checkNotesThisIsAPrivateFunctionYouGuys() {
     console.log("short note: " + shortNote);
     for ( note of notes ){
       console.log("note text: " + note.text);
@@ -22,7 +22,8 @@ function createNote (noteText = "what a day to create a note") {
     throw "test failed: createNote " + noteText;
   }
   
-  setTimeout(checkNotes(), 50000);
+  setTimeout(checkNotesThisIsAPrivateFunctionYouGuys, 1000);
 };
 
-createNote();
+createNoteSpec();
+// setTimeout(createNoteSpec(), 1000)
