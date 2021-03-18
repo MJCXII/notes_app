@@ -9,7 +9,15 @@
     <link rel="stylesheet" href="styles/note.css" />
   </head>
   <body>
+    <!-- day/night mode switch -->
+    <label class="switch" id="switchId">
+          <input type="checkbox" id="checkbox">
+          <span class="slider round"></span>
+       </label>
 
+  <!--implement redirect to main site when we have local storage finished-->
+    <div class="house">   <img id="houseImage" src="./images/dayHouse.png"/> </div>
+<!--implement redirect to main site when we have local storage finished-->
     <div class="pageContainer">
       <div class="notesContainer">
         <h1>Notes!</h1>
@@ -17,10 +25,18 @@
           <textarea id='textField'></textarea> <br>
           <input type="submit" value="Create" id="createButton" />
         </div>
+        <textarea id='textField'></textarea> <br>
+        <input type="submit" value="Save" id="createButton" />
+
       </div>
 
 
       <div id="box"> </div>
+
+      <audio id="savedSound" hidden>
+        <source src="sounds/you-saved-me.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
 
       <script charset="utf-8" src="src/note.js"></script>
       <script charset="utf-8" src="src/notebook.js"></script>
