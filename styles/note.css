@@ -14,13 +14,17 @@ letter-spacing: 1px;
 background-color: #595252; */
 
 .house img {
-  width: 10%;
+  width: 100%;
+  max-width: 216px;
 }
 .pageContainer{
   display: flex;
 }
 
 div.notesContainer{
+  max-width: 40%;
+  padding-left: 2%;
+  padding-right: 3%;
   position: sticky;
 }
 
@@ -31,6 +35,7 @@ div.notesContainer{
 }
 
 #box{
+  margin-top: 30vh;
   display: flex;
   align-items: left;
   flex-direction: column;
@@ -90,7 +95,7 @@ div.notesContainer{
 }
 
 input:checked + .slider {
-  background-color: $blue;
+  background-color: blue;
 }
 
 input:focus + .slider {
@@ -113,7 +118,7 @@ input:checked + .slider:before {
 
 input[type=text]{
     width:100%;
-    border:2px solid #lightgrey;
+    border:2px solid lightgrey;
     border-radius:4px;
     margin:8px 0;
     outline:none;

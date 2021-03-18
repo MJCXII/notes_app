@@ -6,17 +6,23 @@ function createNote (noteText = "what a day to create a note") {
   noteInput.value = noteText;
   noteButton.click();
 
+  var shortNote = noteText.slice(0, 20);
+  console.log(shortNote);
   var notes = document.getElementsByClassName('note');
-  for ( note of notes ){
-    var shortNote = noteText.slice(0, 20);
-    // console.log(shortNote);
-    // console.log(note.text);
-    if (note.text.includes(shortNote)){
-      console.log("test passed: createNote " + noteText);
-      return 1;
+  
+  function checkNotes() {
+    console.log("short note: " + shortNote);
+    for ( note of notes ){
+      console.log("note text: " + note.text);
+      if (note.text.includes(shortNote)){
+        console.log("test passed: createNote " + noteText);
+        return 1;
+      }
     }
+    throw "test failed: createNote " + noteText;
   }
-  throw "test failed: createNote " + noteText;
+  
+  setTimeout(checkNotes(), 50000);
 };
 
 createNote();
