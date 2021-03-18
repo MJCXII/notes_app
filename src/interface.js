@@ -5,7 +5,7 @@ var notes = document.getElementsByClassName('note')
 var mode = 'day';
 // var noteIndex = 1;  // start at 1 because the pre-set note has id 0
 
-// window.onload = setNotebook();
+window.onload = setNotebook();
 window.onload = showPage();
 
 function showPage(){
