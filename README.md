@@ -40,7 +40,13 @@ To start taking notes open index.html in your browser.
 ## Key Features
 
 Simply write a note and then click save. 📓  
-You can also use emojis 🔥 and toggle day/night mode by clicking the switch. 🌙
+<p align="center">
+  <img src="noteadd.gif">
+</p>
+You can also use emojis and toggle day/night mode by clicking the switch.
+<p align="center">
+  <img src="emojinote.gif">
+</p>
 
 ---
 ## Planned Features
