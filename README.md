@@ -47,10 +47,10 @@ You can also use emojis ðŸ”¥ and toggle day/night mode by clicking the switch. ð
 ---
 
 ## Credits
-Max Clarke: https://github.com/MJCXII
-Olga Chmaj: http://github.com/olgachmaj
-Jack Gumoes: http://github.com/jgumoes
-Adam Phillips: http://github.com/adamp2000
+<ul>Max Clarke: https://github.com/MJCXII <br>
+<ul>Olga Chmaj: http://github.com/olgachmaj <br>
+<ul>Jack Gumoes: http://github.com/jgumoes <br>
+<ul>Adam Phillips: http://github.com/adamp2000 <br>
 
 ## Licence
 <s>to kill</s>  
