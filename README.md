@@ -11,7 +11,7 @@
 <p align="center">
   <img  src="https://img.shields.io/badge/coverage-100%25-brightgreen"/>
   <img  src="https://img.shields.io/github/languages/code-size/olgachmaj/thermostat.js?color=brightgreen"/>
-  <img  src="https://img.shields.io/github/languages/top/olgachmaj/thermostat.js"/> 
+  <img  src="https://img.shields.io/github/languages/top/olgachmaj/thermostat.js"/>
   <img  src="https://img.shields.io/github/contributors/MJCXII/notes_app"/>                       
 </p>
 
@@ -27,9 +27,9 @@
   <img  src="">  
 </p>
 
-## Download 
+## Download
 
-To download, clone this repository to your local machine 
+To download, clone this repository to your local machine
 
 ``git clone https://github.com/MJCXII/notes_app.git``
 
@@ -46,7 +46,11 @@ You can also use emojis ðŸ”¥ and toggle day/night mode by clicking the switch. ð
 ## Planned Features
 ---
 
-## Credits 
+## Credits
+Max Clarke: https://github.com/MJCXII
+Olga Chmaj: http://github.com/olgachmaj
+Jack Gumoes: http://github.com/jgumoes
+Adam Phillips: http://github.com/adamp2000
 
 ## Licence
 <s>to kill</s>  
