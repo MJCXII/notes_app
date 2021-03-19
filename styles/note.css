@@ -1,17 +1,7 @@
-/* *{
-  color: #41403E;
-  letter-spacing: 1px;
-  background-color: grey;
-
-} */
-
 body {
   color: #41403E;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
-
-/* color: #FFFCF6;
-letter-spacing: 1px;
-background-color: #595252; */
 
 .house img {
   width: 100%;
@@ -52,7 +42,6 @@ div.notesContainer{
   margin: 1 1rem;
   transition: all 0.5s ease;
   outline: none;
-  /* box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2); */
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
